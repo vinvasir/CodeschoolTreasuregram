@@ -1,11 +1,21 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>TreasureGram</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
 	</head>
 	<body>
-	<h1>TreasureGram</h1>
-	<p>{{ treasure_name }}</p>
-	<p>{{ treasure_val }}</p>
+		<nav class="navbar navbar-default navbar-static-top text-center">
+			<a href="/">
+				<img src="{% static 'images/logo.png' %}" alt="TreasureGram">
+			</a>
+		</nav>
+
+		<h1>TreasureGram</h1>
+		<p>{{ treasure_name }}</p>
+		<p>{{ treasure_val }}</p>
 	</body>
 </html>
