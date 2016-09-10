@@ -1,9 +1,7 @@
 from django.shortcuts import render
+from .models import Treasure
 
 # Create your views here.
 def index(request):
-		name = 'Gold Nugget'
-		value = 1000.00
-		context = {'treasure_name': name,
-							 'treasure_val': value }
-		return render(request, 'index.html', context)
+		treasures = Treasure.objects.all()
+		return render(request, 'index.html', {'treasures': treasures})
